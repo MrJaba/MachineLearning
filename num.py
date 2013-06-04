@@ -1,6 +1,5 @@
 import sklearn.neighbors as neighbours
 import numpy as np
-from numpy import savetxt
 
 def main():
     knn = neighbours.KNeighborsClassifier()
@@ -12,7 +11,7 @@ def main():
     testset = np.genfromtxt(open('Data/test.csv','r'), delimiter=',', dtype='f8')[1:]
     predicted_labels = knn.predict(testset)
 
-    savetxt('Data/submission.csv', predicted_labels, delimiter=',', fmt='%f')
+    np.savetxt('Data/submission.csv', predicted_labels, delimiter=',', fmt='%f')
 
 
 if __name__=="__main__":
